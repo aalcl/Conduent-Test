@@ -1,27 +1,9 @@
 # ConduentTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3. Para ejecutar es necesario contar con node.js instalado, así como también angular, esto se puede hacer con el comando `npm install -g @angular/cli@latest`.
+
+* Si aparece el error "An unhandled exception occurred: Cannot find module '@angular-devkit/build-angular/package.json'" entonces se instala `npm install --save-dev @angular-devkit/build-angular`.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para ejecutar se abre el cmd, se busca el directorio donde se almacene el proyecto y corre el comando `ng serve`. Para acceder ingrese a `http://localhost:4200/` en el navegador.
