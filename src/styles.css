@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.chart-container {
+    width: 500px;
+    height: 300px;
+    margin: auto;
+}
+
+.container-size {
+    width: 50%;
+}
+
+.table-container {
+    width: 800px;
+    margin: auto;
+}

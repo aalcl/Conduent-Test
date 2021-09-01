@@ -1,0 +1,112 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        :host {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 14px;
+        color: #333;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 8px 0;
+      }
+    
+      p {
+        margin: 0;
+      }
+    
+      .spacer {
+        flex: 1;
+      }
+    </style>
+</head>
+
+<h2 class="text-center">Proyecto Calificaciones</h2>
+<div class="w-50 p-3">
+    <div class="input-group mb-3">
+    <input type="file" class="form-control" id="inputGroupFile02" (change)="onFileChange($event)" accept="xlsx">
+    <button class="input-group-text" for="inputGroupFile02" (click)="excelToJson('disp')">Subir</button>
+  </div>
+</div>
+
+<div id="disp" style="display: none;">
+<div id="tabla" class="table-container">
+    <table class="table">
+        <thead class="thead-dark">  
+            <tr> 
+                
+                <th scope="col">Clave</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Grado</th>
+                <th scope="col">Grupo</th>
+                <th scope="col">Calificación</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let cal of filelist | obtoarr"> 
+            <td *ngFor="let c of cal | obtoarr">{{c}}</td>
+        </tr>
+    </table>
+</div>
+<div id="tablap" class="table-container" style="display: none;">
+    <table class="table">
+        <thead class="thead-dark">  
+            <tr> 
+                
+                <th scope="col">Clave</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Grado</th>
+                <th scope="col">Grupo</th>
+                <th scope="col">Calificación</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let cal of filelistc | obtoarr"> 
+            <td *ngFor="let c of cal | obtoarr">{{c}}</td>
+        </tr>
+    </table>
+</div>
+<div class="w-25 p-3">
+    <div class="input-group mb-3">
+        <input [(ngModel)] = "dato" type="text" placeholder="Número de rotaciones" class="form-control" aria-label="Número de rotaciones" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="claveChangecal('tabla','tablap')">Aceptar</button>
+      </div>
+</div>
+<div class="table-container">
+    <table class="table">
+        <thead class="thead-dark">  
+            <tr> 
+                <th scope="col">Mejor calificación</th>
+                <th scope="col">Peor calificación</th>
+            </tr>
+        </thead>
+        <tr> 
+            <td>{{mayor}}</td>
+            <td>{{menor}}</td>
+        </tr>
+    </table>
+    <table class="table">
+        <thead class="thead-dark">  
+            <tr> 
+                <th scope="col">Promedio total del grupo</th>
+            </tr>
+        </thead>
+        <tr> 
+            <td>{{suma}}</td>
+        </tr>
+    </table>
+</div>
+<app-grafica></app-grafica>
+</div>
